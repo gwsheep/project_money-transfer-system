@@ -1,20 +1,37 @@
 package com.devgwon.moneytransfersystem.service;
 
+import com.devgwon.moneytransfersystem.dto.TransferDetailRequest;
+import com.devgwon.moneytransfersystem.dto.TransferListResponse;
+import com.devgwon.moneytransfersystem.dto.TransferResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Slf4j
 @RequiredArgsConstructor
 @Service
 public class TransferService {
 
+    public TransferResponse getTransfer(TransferDetailRequest request) {
+
+        //단건 조회
 
 
 
+        return null;
+    }
+
+    public TransferListResponse getTransfers() {
+
+        //다건 조회
 
 
-    //@Transactional
+
+        return null;
+    }
+
+    @Transactional
     public boolean transfer() {
 
         // 송금자 계좌 조회, 검증
@@ -52,10 +69,5 @@ public class TransferService {
     private void deposit() {
 
     }
-
-
-
-
-
 
 }
