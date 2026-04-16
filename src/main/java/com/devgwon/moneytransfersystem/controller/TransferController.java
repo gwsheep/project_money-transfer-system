@@ -23,8 +23,8 @@ public class TransferController {
     }
 
     @GetMapping("/transfers")
-    public ResponseEntity<Response> getTransfers() {
-        TransferListResponse transferList = transferService.getTransfers();
+    public ResponseEntity<Response> getTransfers(@Valid TransferListRequest request) {
+        TransferListResponse transferList = transferService.getTransfers(request);
         return ResponseEntity.ok(Response.builder().result(transferList).build());
     }
 
@@ -32,7 +32,7 @@ public class TransferController {
     public ResponseEntity<Response> transferMoney(@Valid @RequestBody TransferRequest request) {
         boolean isSuccess = transferService.transfer();
         TransferResponse res = TransferResponse.builder()
-                                                .status(isSuccess)
+                                                .isSuccess(isSuccess)
                                                 .build();
         return ResponseEntity.ok(Response.builder().result(res).build());
     }

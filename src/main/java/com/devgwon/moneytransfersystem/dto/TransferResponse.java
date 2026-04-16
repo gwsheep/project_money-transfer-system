@@ -10,17 +10,17 @@ import java.time.OffsetDateTime;
 @Builder
 public class TransferResponse {
 
-    private Long transferTransactionId;
+    private Long id;
 
-    private boolean status;
+    private String status;
 
-    private String fromAccountNumber;
+    private String fromAccount;
 
-    private String toAccountNumber;
+    private String toAccount;
 
-    private String senderName;
+    private String sender;
 
-    private String receiverName;
+    private String receiver;
 
     private Long amount;
 
@@ -31,5 +31,7 @@ public class TransferResponse {
     private String memo;
 
     private OffsetDateTime transferredAt;
+
+    private boolean isSuccess;
 
 }
